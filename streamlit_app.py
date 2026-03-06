@@ -51,5 +51,5 @@ if img1 and img2:
     st.write(f"Model 1 (Binary Crossentropy) Score: {pred1:.4f}")
     st.success(f"Model 1 Prediction: {result1}")
 
-st.write(f"Model 2 (Contrastive Loss) Distance: {pred2:.4f}")
-st.success(f"Model 2 Prediction: {result2}")
+    st.write(f"Model 2 (Contrastive Loss) Distance: {pred2:.4f}")
+    st.success(f"Model 2 Prediction: {result2}")
