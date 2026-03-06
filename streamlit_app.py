@@ -11,8 +11,8 @@ def contrastive_loss(y_true, y_pred):
     margin_square = tf.square(tf.maximum(margin - y_pred, 0))
     return tf.reduce_mean(y_true * square_pred + (1 - y_true) * margin_square)
 
-model1 = tf.keras.models.load_model("models/model1.keras")
-model2 = tf.keras.models.load_model("models/model2.keras")
+model1 = tf.keras.models.load_model("models/model1.keras", compile=False)
+model2 = tf.keras.models.load_model("models/model2.keras", compile=False)
 
 st.title("Siamese Digit Similarity Detector")
 
