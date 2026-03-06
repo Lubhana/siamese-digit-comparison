@@ -45,7 +45,7 @@ if img1 and img2:
         result1 = "Different Digit"
 
 # Model 2 interpretation
-    if pred2 < 0.001:
+    if pred2 < 0.00001:
         result2 = "Same Digit"
     else:
         result2 = "Different Digit"
