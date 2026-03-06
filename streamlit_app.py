@@ -31,8 +31,8 @@ if img1 and img2:
     image2 = preprocess(Image.open(img2))
 
     st.image([img1,img2], width=150)
-    pred1 = model1.predict([image1, image2])[0][0]
-    pred2 = model2.predict([image1, image2])[0][0]
+    pred1 = model1.predict([image1, image2])
+    pred2 = model2.predict([image1, image2])
 
     st.subheader("Results")
 
