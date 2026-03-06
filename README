@@ -1,0 +1,22 @@
+
+
+This project compares two Siamese neural network models trained on MNIST.
+
+Model 1
+Binary Crossentropy loss
+
+Model 2
+Contrastive loss
+
+Goal:
+Learn similarity between handwritten digits.
+
+Features
+- Model comparison
+- Distance visualization
+- Streamlit UI
+
+How to run
+
+pip install -r requirements.txt
+streamlit run streamlit_app.py
