@@ -31,11 +31,25 @@ if img1 and img2:
     image2 = preprocess(Image.open(img2))
 
     st.image([img1,img2], width=150)
-
-    pred1 = model1.predict([image1,image2])
-    pred2 = model2.predict([image1,image2])
+    pred1 = model1.predict([image1, image2])[0][0]
+    pred2 = model2.predict([image1, image2])[0][0]
 
     st.subheader("Results")
 
-    st.write("Model 1 (Binary Crossentropy):",pred1[0][0])
-    st.write("Model 2 (Contrastive Loss):",pred2[0][0])
+# Model 1 interpretation
+    if pred1 > 0.5:
+        result1 = "Same Digit"
+    else:
+        result1 = "Different Digit"
+
+# Model 2 interpretation
+    if pred2 < 0.5:
+        result2 = "Same Digit"
+    else:
+        result2 = "Different Digit"
+
+    st.write(f"Model 1 (Binary Crossentropy) Score: {pred1:.4f}")
+    st.success(f"Model 1 Prediction: {result1}")
+
+st.write(f"Model 2 (Contrastive Loss) Distance: {pred2:.4f}")
+st.success(f"Model 2 Prediction: {result2}")
