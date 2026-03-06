@@ -55,3 +55,5 @@ if img1 and img2:
 
     st.write(f"Model 2 (Contrastive Loss) Distance: {pred2:.4f}")
     st.success(f"Model 2 Prediction: {result2}")
+    pred2 = model2.predict([image1, image2])
+    st.write("Raw prediction:", pred2)
